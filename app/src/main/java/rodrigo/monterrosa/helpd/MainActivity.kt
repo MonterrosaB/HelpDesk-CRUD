@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 val objConexion =Conexion().cadenaConexion()
 
-                val addTicket =objConexion?.prepareStatement("Insert into Ticket (IdTicket, Titulo, Descripcion, IdUsuario, Estado) VALUES(?, ?, ?, ?, 'A')")!!
+                val addTicket =objConexion?.prepareStatement("Insert into Ticket (IdTicket, Titulo, Descripcion, Estado, IdUsuario) VALUES(?, ?, ?, 'A', ?)")!!
 
                 addTicket.setString(1, UUID.randomUUID().toString())
                 addTicket.setString(2, txtTitulo.text.toString())

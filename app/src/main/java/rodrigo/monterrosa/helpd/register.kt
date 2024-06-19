@@ -42,7 +42,7 @@ class register : AppCompatActivity() {
 
                 val crearCuenta = objConexion?.prepareStatement("insert into Usuario values (?, ?, ?, ?, ?)")!!
                 crearCuenta.setString(1, UUID.randomUUID().toString())
-                crearCuenta.setInt(2, txtNombre.text.toString().toInt())
+                crearCuenta.setString(2, txtNombre.text.toString())
                 crearCuenta.setString(3, txtMail.text.toString())
                 crearCuenta.setString(4, txtUsuario.text.toString())
                 crearCuenta.setString(5, txtContraseña.text.toString())
